@@ -6,7 +6,7 @@ by Manuel Aguilera López
 First clone the repo and set up the virtual environment
 
 ```shell
-git clone myremote
+git clone git@github.com:manuelisimo/challenge.git
 cd challenge
 python3 -m venv env
 source env/bin/activate
@@ -17,6 +17,12 @@ Then run the Django migrations
 
 ```shell
  ./manage.py migrate
+```
+
+Optionally create an admin user
+
+```shell
+./manage.py createsuperuser --username manuel --email manuel@manuel.codes
 ```
 
 ## Retrieve external data
@@ -39,4 +45,12 @@ And then the API is available under `http://127.0.0.1:8000/planets/`.
 
 ```shell
 http http://127.0.0.1:8000/planets/ | jq
+```
+
+## Run the tests
+
+To run the tests use the django admin
+
+```shell
+./manage test
 ```

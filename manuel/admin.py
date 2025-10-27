@@ -1,3 +1,8 @@
 from django.contrib import admin
+from manuel.models import Planet
 
-# Register your models here.
+
+class PlanetAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Planet, PlanetAdmin)
