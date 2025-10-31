@@ -19,3 +19,12 @@ class Planet(models.Model):
     # residents
     # films
     created = models.DateTimeField(auto_now_add=True)
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+
+class User(models.Model):
+    name = models.CharField(max_length=200)
+    books = models.ManyToManyField(Book)
+    friends = models.ManyToManyField("manuel.User")

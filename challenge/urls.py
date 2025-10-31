@@ -17,8 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from manuel.views import PlanetViewSet
-
+from manuel.views import PlanetViewSet, user_books
 
 router = routers.SimpleRouter()
 router.register(r'planets', PlanetViewSet)
@@ -26,4 +25,5 @@ router.register(r'planets', PlanetViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('api/user/<int:user_id>/books', user_books)
 ]
